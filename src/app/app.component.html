@@ -1,1 +1,20 @@
 <h1>Sistema de puntaje de prejuveniles <span class="badge bg-secondary">2023</span></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre completo</th>
+      <th>Edad</th>
+      <th>Fecha nacimiento</th>
+      <th>Es ayudante</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let miembro of listaMiembros">
+      <td>{{miembro.nombreCompleto}}</td>
+      <td>{{miembro.edad}}</td>
+      <td>{{miembro.fechaNacimiento}}</td>
+      <td>{{miembro.esAyudante}}</td>
+    </tr>
+  </tbody>
+</table>
