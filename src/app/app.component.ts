@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from 'src/services/supabase.service';
+import { ListaMiembros } from 'src/types/custom-types';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,13 @@ import { SupabaseService } from 'src/services/supabase.service';
 })
 export class AppComponent implements OnInit {
   title = 'puntaje-prejuveniles';
-  listaMiembros: any;
+  listaMiembros: ListaMiembros[];
 
-  constructor(private _supabaseService: SupabaseService) {}
+  constructor(private _supabaseService: SupabaseService) {
+    this.listaMiembros = []
+  }
 
   public async ngOnInit() {
-    this.listaMiembros = await this._supabaseService.getMiembroEquipo();
+    this.listaMiembros = await this._supabaseService.getListaMiembros();
   }
 }
