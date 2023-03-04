@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from './app.service';
+import { SupabaseService } from 'src/services/supabase.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,9 @@ export class AppComponent implements OnInit {
   title = 'puntaje-prejuveniles';
   listaMiembros: any;
 
-  constructor(private _appService: AppService) {}
+  constructor(private _supabaseService: SupabaseService) {}
 
   public async ngOnInit() {
-    this.listaMiembros = await this._appService.getMiembroEquipo();
+    this.listaMiembros = await this._supabaseService.getMiembroEquipo();
   }
 }
