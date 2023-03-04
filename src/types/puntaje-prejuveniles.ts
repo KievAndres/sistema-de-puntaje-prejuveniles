@@ -71,42 +71,42 @@ export interface Database {
         Row: {
           descripcion: string
           fechaModificacion: string
-          idPuntaje: string
+          idPuntajeRegla: string
           puntajeAsignado: number
         }
         Insert: {
           descripcion?: string
           fechaModificacion?: string
-          idPuntaje?: string
+          idPuntajeRegla?: string
           puntajeAsignado?: number
         }
         Update: {
           descripcion?: string
           fechaModificacion?: string
-          idPuntaje?: string
+          idPuntajeRegla?: string
           puntajeAsignado?: number
         }
       }
       RegistroPuntaje: {
         Row: {
           fechaModificacion: string
-          idEvento: string
+          idJuego: string | null
           idMiembroEquipo: string
-          idPuntaje: string
+          idPuntajeRegla: string | null
           idRegistroPuntaje: string
         }
         Insert: {
           fechaModificacion?: string
-          idEvento: string
+          idJuego?: string | null
           idMiembroEquipo: string
-          idPuntaje: string
+          idPuntajeRegla?: string | null
           idRegistroPuntaje?: string
         }
         Update: {
           fechaModificacion?: string
-          idEvento?: string
+          idJuego?: string | null
           idMiembroEquipo?: string
-          idPuntaje?: string
+          idPuntajeRegla?: string | null
           idRegistroPuntaje?: string
         }
       }

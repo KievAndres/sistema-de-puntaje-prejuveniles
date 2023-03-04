@@ -8,8 +8,10 @@ export class SupabaseService {
   
   async getMiembroEquipo(): Promise<void> {
     let { data } = await supabase
-      .from('MiembroEquipo')
-      .select('nombreCompleto')
+      .from('RegistroPuntaje')
+      .select(`
+        MiembroEquipo(nombreCompleto)
+      `)
 
     console.log(data);
   }
