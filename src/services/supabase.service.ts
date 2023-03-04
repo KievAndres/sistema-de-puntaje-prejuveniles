@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { environment } from 'src/environments/environment';
-import { MiembroEquipo } from 'src/types/puntaje-prejuveniles.interface';
+import { supabase } from 'src/utils/supabase';
 
 @Injectable({ providedIn: 'root' })
 export class SupabaseService {
-  private supabaseClient: SupabaseClient;
 
-  constructor() {
-    this.supabaseClient = createClient(environment.supabase.url, environment.supabase.publicKey);
-  }
+  constructor() {}
   
   async getMiembroEquipo(): Promise<void> {
-    let {data: MiembroEquipo, error} =
-      await this.supabaseClient
-        .from('MiembroEquipo')
-        .select('idMiembroEquipo');
-    // console.log(data);
+    let { data } = await supabase
+      .from('MiembroEquipo')
+      .select('nombreCompleto')
+
+    console.log(data);
   }
 }

@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "update-types": "npx supabase gen types typescript --project-id vyulcobcpmxtsdfzluss > src/types/puntaje-prejuveniles.ts"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "supabase": "^1.41.4",
     "typescript": "~4.2.3"
   }
 }
