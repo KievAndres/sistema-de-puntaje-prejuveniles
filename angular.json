@@ -78,6 +78,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 3030,
+            "open": true
+          },
           "configurations": {
             "production": {
               "browserTarget": "puntaje-prejuveniles:build:production"

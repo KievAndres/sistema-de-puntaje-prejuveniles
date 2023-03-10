@@ -122,6 +122,23 @@ export interface Database {
           esAyudante: boolean
           puntajeTotal: number
         }[]
+      },
+      get_puntaje_mensual: {
+        Args: Record<PropertyKey, number>
+        Returns: {
+          nombreCompleto: string
+          esAyudante: boolean
+          puntajeTotal: number,
+          mes: number
+        }[]
+      },
+      get_puntaje_total_segun_rango: {
+        Args: Record<PropertyKey, any>
+        Returns: {
+          nombreCompleto: string
+          esAyudante: boolean
+          puntajeTotal: number
+        }[]
       }
     }
     Enums: {
