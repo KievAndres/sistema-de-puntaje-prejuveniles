@@ -78,7 +78,7 @@ export interface Database {
           descripcion?: string
           fechaModificacion?: string
           idPuntajeRegla?: string
-          puntajeAsignado?: number
+          puntajeAsignado: number
         }
         Update: {
           descripcion?: string
@@ -115,7 +115,14 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      getpuntajetotal: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          nombreCompleto: string
+          esAyudante: boolean
+          puntajeTotal: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

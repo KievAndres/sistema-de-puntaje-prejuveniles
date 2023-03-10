@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from 'src/services/supabase.service';
-import { ListaMiembros } from 'src/types/custom-types';
+import { ListaMiembrosPuntajeTotal } from 'src/types/custom-types';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { ListaMiembros } from 'src/types/custom-types';
 })
 export class AppComponent implements OnInit {
   title = 'puntaje-prejuveniles';
-  listaMiembros: ListaMiembros[];
+  listaMiembros: ListaMiembrosPuntajeTotal[] | null;
 
   constructor(private _supabaseService: SupabaseService) {
     this.listaMiembros = []
