@@ -1,0 +1,42 @@
+<nav-bar [titulo]="titulo"></nav-bar>
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (change)="toggleSwitch()">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Invertir valor</label>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Asistencia</th>
+      <th>Puntualidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let miembro of listaMiembros">
+      <td>{{miembro.nombreCompleto}}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-success"
+          [ngClass]="{'btn-success': miembro.asistencia, 'btn-danger': !miembro.asistencia}"
+          (click)="toggleRegistro(miembro, 'asistencia')">
+          <span *ngIf="miembro.asistencia">✅</span>
+          <span *ngIf="!miembro.asistencia">❌</span>
+        </button>
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-success"
+          [ngClass]="{'btn-success': miembro.puntualidad, 'btn-danger': !miembro.puntualidad}"
+          (click)="toggleRegistro(miembro, 'puntualidad')">
+          <span *ngIf="miembro.puntualidad">✅</span>
+          <span *ngIf="!miembro.puntualidad">❌</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-info" (click)="guardarDatos()">Guardar</button>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { SupabaseService } from 'src/services/supabase.service';
-import { ListaMiembrosPuntajeTotal } from 'src/types/custom-types';
+import { MiembroPuntajeTotal } from 'src/types/custom-types';
 import { enumNombreMeses, periodoRanking } from '../../../utils/enum';
 
 @Component({
@@ -9,8 +9,8 @@ import { enumNombreMeses, periodoRanking } from '../../../utils/enum';
   styleUrls: ['ranking.component.scss']
 })
 export class RankingComponent {
-  public titulo = 'Ranking prejuveniles/ayudantes';
-  public listaMiembros: ListaMiembrosPuntajeTotal[] | null;
+  public titulo = 'Ranking';
+  public listaMiembros: MiembroPuntajeTotal[] | null;
   public tituloPeridoActual: string;
   public periodoElegido: 'periodo' | 'anual';
 

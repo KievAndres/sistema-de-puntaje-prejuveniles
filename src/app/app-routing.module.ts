@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { AsistenciaPuntualidadComponent } from './components/asistencia-puntualidad/asistencia-puntualidad.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'ranking',
     component: RankingComponent
+  },
+  {
+    path: 'asistencia',
+    component: AsistenciaPuntualidadComponent
   }
 ];
 
