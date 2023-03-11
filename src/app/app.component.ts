@@ -1,22 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { SupabaseService } from 'src/services/supabase.service';
-import { ListaMiembrosPuntajeTotal } from 'src/types/custom-types';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'puntaje-prejuveniles';
-  listaMiembros: ListaMiembrosPuntajeTotal[] | null;
-
-  constructor(private _supabaseService: SupabaseService) {
-    this.listaMiembros = []
-  }
-
-  public async ngOnInit() {
-    this.listaMiembros = await this._supabaseService.getListaMiembrosPuntajeTotal()
-    await this._supabaseService.getListaMiembrosPuntajePorMes(2);
-  }
 }

@@ -1,0 +1,28 @@
+<nav-bar [titulo]="titulo"></nav-bar>
+<button
+  type="button"
+  class="btn"
+  [ngClass]="{'btn-success': periodoElegido === 'periodo', 'btn-outline-success': periodoElegido !== 'periodo'}"
+  (click)="cambiarPeriodoElegido('periodo')">{{tituloPeridoActual}}</button>
+<button
+  type="button"
+  class="btn btn-danger"
+  [ngClass]="{'btn-danger': periodoElegido === 'anual', 'btn-outline-danger': periodoElegido !== 'anual'}"
+  (click)="cambiarPeriodoElegido('anual')">Anual</button>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Puesto</th>
+      <th>Nombre completo</th>
+      <th>Puntaje Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let miembro of listaMiembros, let i = index" [ngClass]="{'ayudanteBackground': miembro.esAyudante}">
+      <td>{{i + 1}}</td>
+      <td>{{miembro.nombreCompleto}}</td>
+      <td>{{miembro.puntajeTotal}}</td>
+    </tr>
+  </tbody>
+</table>

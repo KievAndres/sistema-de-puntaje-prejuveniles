@@ -1,18 +1,1 @@
-<h1>Sistema de puntaje de prejuveniles <span class="badge bg-secondary">2023</span></h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Puesto</th>
-      <th>Nombre completo</th>
-      <th>Puntaje Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let miembro of listaMiembros, let i = index" [ngClass]="{'ayudanteBackground': miembro.esAyudante}">
-      <td>{{i + 1}}</td>
-      <td>{{miembro.nombreCompleto}}</td>
-      <td>{{miembro.puntajeTotal}}</td>
-    </tr>
-  </tbody>
-</table>
+<router-outlet></router-outlet>

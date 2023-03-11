@@ -115,25 +115,30 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      getpuntajetotal: {
-        Args: Record<PropertyKey, never>
+      get_puntaje_mensual: {
+        Args: {
+          mes: number
+        }
+        Returns: {
+          nombreCompleto: string
+          esAyudante: boolean
+          puntajeTotal: number
+          mes: number
+        }[]
+      }
+      get_puntaje_total_segun_rango: {
+        Args: {
+          fecha_inicial: string
+          fecha_final: string
+        }
         Returns: {
           nombreCompleto: string
           esAyudante: boolean
           puntajeTotal: number
         }[]
-      },
-      get_puntaje_mensual: {
-        Args: Record<PropertyKey, number>
-        Returns: {
-          nombreCompleto: string
-          esAyudante: boolean
-          puntajeTotal: number,
-          mes: number
-        }[]
-      },
-      get_puntaje_total_segun_rango: {
-        Args: Record<PropertyKey, any>
+      }
+      getpuntajetotal: {
+        Args: Record<PropertyKey, never>
         Returns: {
           nombreCompleto: string
           esAyudante: boolean

@@ -21,8 +21,9 @@ export class SupabaseService {
 
   async getListaMiembrosPuntajeTotalRango(fechaInicial: string, fechaFinal: string): Promise<ListaMiembrosPuntajeTotal[] | null> {
     const { data } = await supabase.rpc('get_puntaje_total_segun_rango', {
-      fechaFinal,
-      fechaFinal
+      fecha_inicial: fechaInicial,
+      fecha_final: fechaFinal
     })
+    return data;
   }
 }
