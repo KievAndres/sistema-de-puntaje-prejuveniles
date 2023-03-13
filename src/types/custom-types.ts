@@ -17,7 +17,14 @@ export interface Miembro {
   esAyudante: boolean;
 }
 
-export interface MiembroAsistenciaPuntualidad extends Miembro {
-  puntualidad: boolean;
+export interface MiembroRegistroRegla extends Miembro {
   asistencia: boolean;
+  puntualidad: boolean;
+  trajoBiblia: boolean;
+  trajoLecturaBiblica: boolean;
+  lecturBiblicaAlDia: boolean;
+  primeroEnEncontrarCitaBiblica: boolean;
+  recordarVersiculoDeMemoria: boolean;
+  trajoSombrero: boolean;
+  trajoOfrenda: boolean;
 }

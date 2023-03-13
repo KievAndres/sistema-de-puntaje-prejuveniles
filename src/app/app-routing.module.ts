@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RankingComponent } from './components/ranking/ranking.component';
-import { AsistenciaPuntualidadComponent } from './components/asistencia-puntualidad/asistencia-puntualidad.component';
+import { AsistenciaPuntualidadComponent } from './components/registro-reglas-container/components/asistencia-puntualidad/asistencia-puntualidad.component';
 
 const routes: Routes = [
   {

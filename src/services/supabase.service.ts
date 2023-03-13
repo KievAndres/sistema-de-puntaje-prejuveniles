@@ -1,24 +1,31 @@
 import { Injectable } from '@angular/core';
 import { supabase } from 'src/utils/supabase';
-import { MiembroPuntajeTotal, MiembroAsistenciaPuntualidad } from '../types/custom-types';
+import { MiembroPuntajeTotal, MiembroRegistroRegla } from '../types/custom-types';
 
 @Injectable({ providedIn: 'root' })
 export class SupabaseService {
 
   constructor() {}
 
-  async getListaMiembroAsistenciaPuntualidad(): Promise<MiembroAsistenciaPuntualidad[]> {
+  async getListaMiembrosRegistroRegla(): Promise<MiembroRegistroRegla[]> {
     const { data } = await supabase
       .from('MiembroEquipo')
       .select('idMiembroEquipo, nombreCompleto, esAyudante')
       .order('nombreCompleto');
-    return (data || []).map(miembroAsistenciaPuntualidad => {
+    return (data || []).map(miembroRegistroRegla => {
       return {
-        idMiembroEquipo: miembroAsistenciaPuntualidad.idMiembroEquipo,
-        nombreCompleto: miembroAsistenciaPuntualidad.nombreCompleto,
-        esAyudante: miembroAsistenciaPuntualidad.esAyudante,
+        idMiembroEquipo: miembroRegistroRegla.idMiembroEquipo,
+        nombreCompleto: miembroRegistroRegla.nombreCompleto,
+        esAyudante: miembroRegistroRegla.esAyudante,
         asistencia: true,
-        puntualidad: true
+        puntualidad: true,
+        trajoBiblia: true,
+        trajoLecturaBiblica: true,
+        lecturBiblicaAlDia: true,
+        primeroEnEncontrarCitaBiblica: true,
+        recordarVersiculoDeMemoria: true,
+        trajoSombrero: true,
+        trajoOfrenda: true
       }
     });
   }

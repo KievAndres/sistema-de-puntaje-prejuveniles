@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { Miembro, MiembroAsistenciaPuntualidad } from '../../../types/custom-types';
-import { SupabaseService } from '../../../services/supabase.service';
-import { puntajeReglaId } from '../../../utils/enum';
+import { MiembroRegistroRegla } from '../../../../../types/custom-types';
+import { SupabaseService } from '../../../../../services/supabase.service';
+import { puntajeReglaId } from '../../../../../utils/enum';
 
 @Component({
   selector: 'asistencia-puntualidad',
@@ -10,7 +10,7 @@ import { puntajeReglaId } from '../../../utils/enum';
 })
 export class AsistenciaPuntualidadComponent implements OnInit {
   public titulo: string;
-  public listaMiembros: MiembroAsistenciaPuntualidad[];
+  public listaMiembros: MiembroRegistroRegla[];
 
   constructor(private _supabaseService: SupabaseService) {
     this.titulo = 'Asistencia y puntualidad';
@@ -18,7 +18,7 @@ export class AsistenciaPuntualidadComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.listaMiembros = await this._supabaseService.getListaMiembroAsistenciaPuntualidad();
+    this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla();
   }
 
   public toggleSwitch(): void {
@@ -29,7 +29,7 @@ export class AsistenciaPuntualidadComponent implements OnInit {
     })
   }
 
-  public toggleRegistro(miembro: MiembroAsistenciaPuntualidad, registro: 'asistencia' | 'puntualidad'): void {
+  public toggleRegistro(miembro: MiembroRegistroRegla, registro: 'asistencia' | 'puntualidad'): void {
     switch(registro) {
       case 'asistencia':
         miembro.asistencia = !miembro.asistencia;

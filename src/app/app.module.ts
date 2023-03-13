@@ -5,11 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { AsistenciaPuntualidadComponent } from './components/asistencia-puntualidad/asistencia-puntualidad.component';
-
+import { RegistroReglasContainerModule } from './components/registro-reglas-container/registro-reglas-container.module';
 @NgModule({
-  declarations: [AppComponent, RankingComponent, NavBarComponent, AsistenciaPuntualidadComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, RankingComponent, NavBarComponent],
+  imports: [BrowserModule, AppRoutingModule, RegistroReglasContainerModule],
   providers: [],
   bootstrap: [AppComponent],
 })
