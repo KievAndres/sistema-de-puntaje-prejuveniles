@@ -3,6 +3,10 @@ export interface NavRoute {
   isActive: boolean;
   title: string;
 }
+export interface Tab {
+  nombre: string;
+  esActivo: boolean;
+}
 export interface MiembroPuntajeTotal {
   nombreCompleto: string;
   esAyudante: boolean;

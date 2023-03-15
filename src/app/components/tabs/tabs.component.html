@@ -1,0 +1,7 @@
+<div class="btn-group">
+  <a *ngFor="let tab of tabs"
+    class="btn btn-outline-info"
+    [ngClass]="{'active': tab.esActivo}"
+    (click)="onClickTab(tab)"
+    >{{tab.nombre}}</a>
+</div>

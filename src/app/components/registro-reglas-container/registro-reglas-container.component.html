@@ -1,2 +1,10 @@
 <nav-bar></nav-bar>
-<h1>reglas</h1>
+<tabs [tabs]="tabsRegistroReglas"></tabs>
+<asistencia-puntualidad
+  *ngIf="tabsRegistroReglas[0].esActivo"
+  [listaMiembros]="listaMiembros">
+</asistencia-puntualidad>
+<registro-reglas
+  *ngIf="tabsRegistroReglas[0].esActivo">
+</registro-reglas>
+<button type="button" class="btn btn-info btn-guardar" (click)="guardarDatos()">Guardar</button>
