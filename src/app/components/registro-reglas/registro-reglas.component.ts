@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MiembroRegistroRegla } from '../../../../../types/custom-types';
-import { SupabaseService } from '../../../../../services/supabase.service';
+import { MiembroRegistroRegla } from '../../../types/custom-types';
+import { SupabaseService } from '../../../services/supabase.service';
 
 @Component({
   selector: 'registro-reglas',

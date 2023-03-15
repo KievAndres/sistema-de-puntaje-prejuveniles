@@ -1,3 +1,8 @@
+export interface NavRoute {
+  path: string;
+  isActive: boolean;
+  title: string;
+}
 export interface MiembroPuntajeTotal {
   nombreCompleto: string;
   esAyudante: boolean;

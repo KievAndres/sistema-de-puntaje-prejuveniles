@@ -4,11 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { RegistroReglasContainerComponent } from './components/registro-reglas-container/registro-reglas-container.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { RegistroReglasContainerModule } from './components/registro-reglas-container/registro-reglas-container.module';
 @NgModule({
-  declarations: [AppComponent, RankingComponent, NavBarComponent],
-  imports: [BrowserModule, AppRoutingModule, RegistroReglasContainerModule],
+  declarations: [AppComponent, NavBarComponent, RankingComponent, RegistroReglasContainerComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

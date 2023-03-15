@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['registro-reglas-container.component.scss']
 })
 export class RegistroReglasContainerComponent {
+  public titulo: string;
 
+  constructor() {
+    this.titulo = 'Asistencia y puntualidad';
+  }
 }

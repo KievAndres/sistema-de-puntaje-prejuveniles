@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RankingComponent } from './components/ranking/ranking.component';
-import { AsistenciaPuntualidadComponent } from './components/registro-reglas-container/components/asistencia-puntualidad/asistencia-puntualidad.component';
+import { RegistroReglasContainerComponent } from './components/registro-reglas-container/registro-reglas-container.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'ranking'
+    redirectTo: 'reglas'
   },
   {
     path: 'ranking',
     component: RankingComponent
   },
   {
-    path: 'asistencia',
-    component: AsistenciaPuntualidadComponent
+    path: 'reglas',
+    component: RegistroReglasContainerComponent
   }
 ];
 
