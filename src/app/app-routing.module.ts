@@ -7,7 +7,7 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'ranking'
+    redirectTo: 'reglas'
   },
   {
     path: 'ranking',

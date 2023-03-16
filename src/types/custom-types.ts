@@ -37,3 +37,8 @@ export interface MiembroRegistroRegla extends Miembro {
   trajoSombrero: boolean;
   trajoOfrenda: boolean;
 }
+
+export interface PuntajeRegla {
+  idPuntajeRegla: string;
+  descripcion: string;
+}

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MiembroRegistroRegla } from '../../../types/custom-types';
-import { SupabaseService } from '../../../services/supabase.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { MiembroRegistroRegla, PuntajeRegla } from '../../../types/custom-types';
 
 @Component({
   selector: 'registro-reglas',
@@ -8,15 +7,15 @@ import { SupabaseService } from '../../../services/supabase.service';
   styleUrls: ['registro-reglas.component.scss'],
 })
 export class RegistroReglasComponent implements OnInit {
+  @Input() public listaMiembros: MiembroRegistroRegla[] = [];
+  @Input() public listaReglas: PuntajeRegla[] = [];
   public titulo: string;
-  public listaMiembros: MiembroRegistroRegla[];
 
-  constructor(private _supabaseService: SupabaseService) {
+  constructor() {
     this.titulo = 'Registro reglas';
-    this.listaMiembros = [];
   }
 
   public async ngOnInit(): Promise<void> {
-    this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla();
+    // this.listaReglas = await this._supabaseService.getListaReglas();
   }
 }

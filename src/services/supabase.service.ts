@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { supabase } from 'src/utils/supabase';
-import { MiembroPuntajeTotal, MiembroRegistroRegla } from '../types/custom-types';
+import { MiembroPuntajeTotal, MiembroRegistroRegla, PuntajeRegla } from '../types/custom-types';
 
 @Injectable({ providedIn: 'root' })
 export class SupabaseService {
@@ -41,6 +41,14 @@ export class SupabaseService {
       fecha_final: fechaFinal
     })
     return data;
+  }
+
+  async getListaReglas(): Promise<PuntajeRegla[]> {
+    const { data } = await supabase
+      .from('PuntajeRegla')
+      .select('idPuntajeRegla, descripcion')
+      .not('idPuntajeRegla', 'in', '(8b37f961-a447-47ad-b78b-3729fbc16fc8,5234bc9b-9075-4479-943a-f0690ddc6e07)');
+    return data || [];
   }
 
   async guardarAsistenciaPuntualidad(listaInsercionDatos: any): Promise<void> {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../../../services/supabase.service';
-import { MiembroRegistroRegla, Tab } from '../../../types/custom-types';
+import { MiembroRegistroRegla, Tab, PuntajeRegla } from '../../../types/custom-types';
 import { puntajeReglaId } from 'src/utils/enum';
 
 @Component({
@@ -10,24 +10,27 @@ import { puntajeReglaId } from 'src/utils/enum';
 })
 export class RegistroReglasContainerComponent implements OnInit {
   public listaMiembros: MiembroRegistroRegla[];
+  public listaReglas: PuntajeRegla[];
   public tabsRegistroReglas: Tab[];
 
   constructor(private _supabaseService: SupabaseService) {
     this.listaMiembros = [];
+    this.listaReglas = [];
     this.tabsRegistroReglas = [
       {
         nombre: 'Asistencia y puntualidad',
-        esActivo: true
+        esActivo: false
       },
       {
         nombre: 'Registro reglas',
-        esActivo: false
+        esActivo: true
       }
     ];
   }
 
   public async ngOnInit(): Promise<void> {
     this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla();
+    this.listaReglas = await this._supabaseService.getListaReglas();
   }
 
   public guardarDatos(): void {

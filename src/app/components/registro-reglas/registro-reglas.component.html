@@ -1,0 +1,12 @@
+<section
+ *ngFor="let regla of listaReglas">
+  <label [for]="regla.idPuntajeRegla">{{regla.descripcion}}</label>
+  <input
+    type="text"
+    class="form-control"
+    [name]="regla.idPuntajeRegla"
+    [attr.list]="regla.idPuntajeRegla">
+  <datalist [id]="regla.idPuntajeRegla">
+    <option *ngFor="let miembro of listaMiembros" [value]="miembro.nombreCompleto"></option>
+  </datalist>
+</section>
