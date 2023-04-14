@@ -1,0 +1,18 @@
+.lista-miembros-pop-up-container {
+  width: 9em;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px #000 dotted;
+  border-radius: 0.6em;
+  max-height: calc(1.6em * 5);
+  overflow: auto;
+
+  .miembro {
+    width: 9em;
+    height: 1.6em;
+
+    &:hover {
+      background-color: #83f1f1;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 <nav-bar></nav-bar>
-<tabs [tabs]="tabsRegistroReglas"></tabs>
+<section>
+  <tabs [tabs]="tabsRegistroReglas"></tabs>
+</section>
 <asistencia-puntualidad
   *ngIf="tabsRegistroReglas[0].esActivo"
   [listaMiembros]="listaMiembros">

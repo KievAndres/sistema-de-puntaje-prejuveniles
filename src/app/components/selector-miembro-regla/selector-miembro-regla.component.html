@@ -1,0 +1,29 @@
+<ng-container *ngIf="regla">
+  <header class="header-regla">
+    <button
+      class="btn"
+      [ngClass]="{'btn-success': toggleRegla, 'btn-danger': !toggleRegla}"
+      (click)="changeToggleRegla()">
+      <span *ngIf="toggleRegla">SI</span>
+      <span *ngIf="!toggleRegla">NO</span>
+    </button>
+    <label class="label-regla" [for]="regla.idPuntajeRegla">{{regla.descripcion}}</label>
+  </header>
+  <span
+    class="miembro-seleccionado"
+    *ngFor="let miembroSeleccionado of listaMiembrosSeleccionados; let i = index"
+    [style.backgroundColor]="getColorMiembroSeleccionado(i)"
+    (click)="borrarMiembroSeleccionado(miembroSeleccionado)"
+    >{{miembroSeleccionado.nombreCompleto}}</span>
+  <div class="contenedor-input-regla">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="inputMiembroElegido"
+      (ngModelChange)="changeMiembroElegido()">
+    <span
+      class="sugerencia-nombre"
+      (click)="adicionarSugerencia()"
+      >{{miembroSugerido?.nombreCompleto}}</span>
+  </div>
+</ng-container>

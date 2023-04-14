@@ -49,3 +49,14 @@ const enumRoutesTitle = {
 export function getPathDescriptionValue(route: string): string {
   return enumRoutesTitle[route as keyof typeof enumRoutesTitle];
 }
+
+export function getColorFromPalette(index: number): string {
+  const palette = [
+    '#0fa798',
+    '#f2c02b',
+    '#f29d36',
+    '#f3764a',
+    '#ef5354'
+  ];
+  return palette[index];
+}

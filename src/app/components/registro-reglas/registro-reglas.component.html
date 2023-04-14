@@ -1,12 +1,8 @@
-<section
- *ngFor="let regla of listaReglas">
-  <label [for]="regla.idPuntajeRegla">{{regla.descripcion}}</label>
-  <input
-    type="text"
-    class="form-control"
-    [name]="regla.idPuntajeRegla"
-    [attr.list]="regla.idPuntajeRegla">
-  <datalist [id]="regla.idPuntajeRegla">
-    <option *ngFor="let miembro of listaMiembros" [value]="miembro.nombreCompleto"></option>
-  </datalist>
+<section class="container-registro-reglas">
+<selector-miembro-regla
+  *ngFor="let regla of listaReglas"
+  class="selector-miembro-regla"
+  [regla]="regla"
+  [listaMiembros]="listaMiembros">
+  </selector-miembro-regla>
 </section>
