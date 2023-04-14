@@ -17,20 +17,26 @@
         <button
           type="button"
           class="btn btn-success"
-          [ngClass]="{'btn-success': miembro.asistencia, 'btn-danger': !miembro.asistencia}"
-          (click)="toggleRegistro(miembro, 'asistencia')">
-          <span *ngIf="miembro.asistencia">✅</span>
-          <span *ngIf="!miembro.asistencia">❌</span>
+          [ngClass]="{
+            'btn-success': getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.ASISTENCIA),
+            'btn-danger': !getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.ASISTENCIA)
+          }"
+          (click)="toggleRegistro(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.ASISTENCIA)">
+          <span *ngIf="getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.ASISTENCIA)">✅</span>
+          <span *ngIf="!getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.ASISTENCIA)">❌</span>
         </button>
       </td>
       <td>
         <button
           type="button"
           class="btn btn-success"
-          [ngClass]="{'btn-success': miembro.puntualidad, 'btn-danger': !miembro.puntualidad}"
-          (click)="toggleRegistro(miembro, 'puntualidad')">
-          <span *ngIf="miembro.puntualidad">✅</span>
-          <span *ngIf="!miembro.puntualidad">❌</span>
+          [ngClass]="{
+            'btn-success': getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.PUNTUALIDAD),
+            'btn-danger': !getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.PUNTUALIDAD)
+          }"
+          (click)="toggleRegistro(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.PUNTUALIDAD)">
+          <span *ngIf="getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.PUNTUALIDAD)">✅</span>
+          <span *ngIf="!getAsistenciaPuntualidad(miembro.registroPuntajeRegla, asistenciaPuntualidadEnum.PUNTUALIDAD)">❌</span>
         </button>
       </td>
     </tr>

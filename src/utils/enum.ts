@@ -36,9 +36,14 @@ export const periodoRanking: number[][] = [
   [10,11]
 ]
 
+export enum AsistenciaPuntualidadEnum {
+  ASISTENCIA = 'ASISTENCIA',
+  PUNTUALIDAD = 'PUNTUALIDAD'
+}
+
 export const puntajeReglaId = {
-  asistencia: '8b37f961-a447-47ad-b78b-3729fbc16fc8',
-  puntualidad: '5234bc9b-9075-4479-943a-f0690ddc6e07'
+  ASISTENCIA: '8b37f961-a447-47ad-b78b-3729fbc16fc8',
+  PUNTUALIDAD: '5234bc9b-9075-4479-943a-f0690ddc6e07'
 }
 
 const enumRoutesTitle = {

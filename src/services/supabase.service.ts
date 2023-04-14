@@ -1,31 +1,30 @@
 import { Injectable } from '@angular/core';
 import { supabase } from 'src/utils/supabase';
-import { MiembroPuntajeTotal, MiembroRegistroRegla, PuntajeRegla } from '../types/custom-types';
+import { MiembroPuntajeTotal, MiembroRegistroRegla, PuntajeRegla, RegistroPuntajeRegla } from '../types/custom-types';
 
 @Injectable({ providedIn: 'root' })
 export class SupabaseService {
 
   constructor() {}
 
-  async getListaMiembrosRegistroRegla(): Promise<MiembroRegistroRegla[]> {
+  async getListaMiembrosRegistroRegla(listaReglas: PuntajeRegla[]): Promise<MiembroRegistroRegla[]> {
     const { data } = await supabase
       .from('MiembroEquipo')
       .select('idMiembroEquipo, nombreCompleto, esAyudante')
       .order('nombreCompleto');
     return (data || []).map(miembroRegistroRegla => {
+      const registroPuntajeRegla: RegistroPuntajeRegla[] = listaReglas.map((regla) => {
+        return {
+          idPuntajeRegla: regla.idPuntajeRegla,
+          descripcion: regla.descripcion,
+          cumplePuntajeRegla: false
+        };
+      })
       return {
         idMiembroEquipo: miembroRegistroRegla.idMiembroEquipo,
         nombreCompleto: miembroRegistroRegla.nombreCompleto,
         esAyudante: miembroRegistroRegla.esAyudante,
-        asistencia: true,
-        puntualidad: true,
-        trajoBiblia: true,
-        trajoLecturaBiblica: true,
-        lecturBiblicaAlDia: true,
-        primeroEnEncontrarCitaBiblica: true,
-        recordarVersiculoDeMemoria: true,
-        trajoSombrero: true,
-        trajoOfrenda: true
+        registroPuntajeRegla
       }
     });
   }
@@ -47,7 +46,7 @@ export class SupabaseService {
     const { data } = await supabase
       .from('PuntajeRegla')
       .select('idPuntajeRegla, descripcion')
-      .not('idPuntajeRegla', 'in', '(8b37f961-a447-47ad-b78b-3729fbc16fc8,5234bc9b-9075-4479-943a-f0690ddc6e07)');
+      // .not('idPuntajeRegla', 'in', '(8b37f961-a447-47ad-b78b-3729fbc16fc8,5234bc9b-9075-4479-943a-f0690ddc6e07)');
     return data || [];
   }
 

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MiembroRegistroRegla } from 'src/types/custom-types';
+import { RegistroPuntajeRegla } from '../../../types/custom-types';
+import { AsistenciaPuntualidadEnum, puntajeReglaId } from 'src/utils/enum';
 
 @Component({
   selector: 'asistencia-puntualidad',
@@ -9,30 +11,51 @@ import { MiembroRegistroRegla } from 'src/types/custom-types';
 export class AsistenciaPuntualidadComponent {
   @Input() public listaMiembros: MiembroRegistroRegla[] = [];
   public titulo: string;
+  public asistenciaPuntualidadEnum: typeof AsistenciaPuntualidadEnum;
 
   constructor() {
     this.titulo = 'Asistencia y puntualidad';
+    this.asistenciaPuntualidadEnum = AsistenciaPuntualidadEnum;
   }
 
   public toggleSwitch(): void {
+    const { ASISTENCIA, PUNTUALIDAD } = puntajeReglaId;
     this.listaMiembros = this.listaMiembros.map((miembro) => {
-      miembro.asistencia = !miembro.asistencia;
-      miembro.puntualidad = !miembro.puntualidad;
+      miembro.registroPuntajeRegla = miembro.registroPuntajeRegla.map<RegistroPuntajeRegla>(registroPuntajeRegla => {
+        if ([ASISTENCIA, PUNTUALIDAD].includes(registroPuntajeRegla.idPuntajeRegla)) {
+          registroPuntajeRegla.cumplePuntajeRegla = !registroPuntajeRegla.cumplePuntajeRegla;
+        }
+        return registroPuntajeRegla;
+      })
       return miembro;
     });
   }
 
   public toggleRegistro(
-    miembro: MiembroRegistroRegla,
-    registro: 'asistencia' | 'puntualidad'
+    registroPuntajeRegla: RegistroPuntajeRegla[],
+    tipo: string
   ): void {
-    switch (registro) {
-      case 'asistencia':
-        miembro.asistencia = !miembro.asistencia;
+    const reglaId = puntajeReglaId[tipo as keyof typeof puntajeReglaId];
+    for(let registro of registroPuntajeRegla) {
+      if (registro.idPuntajeRegla === reglaId) {
+        registro.cumplePuntajeRegla = !registro.cumplePuntajeRegla;
         break;
-      case 'puntualidad':
-        miembro.puntualidad = !miembro.puntualidad;
-        break;
+      }
     }
+  }
+
+  public getAsistenciaPuntualidad(
+    registroPuntajeRegla: RegistroPuntajeRegla[],
+    tipo: string
+  ): boolean {
+    const reglaId = puntajeReglaId[tipo as keyof typeof puntajeReglaId];
+    let cumplePuntajeRegla = false;
+    for(let registro of registroPuntajeRegla) {
+      if (registro.idPuntajeRegla === reglaId) {
+        cumplePuntajeRegla = registro.cumplePuntajeRegla;
+        break;
+      }
+    }
+    return cumplePuntajeRegla;
   }
 }

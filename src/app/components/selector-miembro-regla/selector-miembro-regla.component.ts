@@ -65,6 +65,10 @@ export class SelectorMiembroReglaComponent {
     this.toggleRegla = !this.toggleRegla;
   }
 
+  public updateSelectorMiembroRegla(): void {
+    // this.listaMiembros = this.listaMiembros.map()
+  }
+
   private _miembroHaSidoAdicionadoAnteriormente(
     nuevoMiembroSeleccionado: MiembroRegistroRegla
   ): boolean {

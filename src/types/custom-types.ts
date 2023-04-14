@@ -26,19 +26,16 @@ export interface Miembro {
   esAyudante: boolean;
 }
 
+
 export interface MiembroRegistroRegla extends Miembro {
-  asistencia: boolean;
-  puntualidad: boolean;
-  trajoBiblia: boolean;
-  trajoLecturaBiblica: boolean;
-  lecturBiblicaAlDia: boolean;
-  primeroEnEncontrarCitaBiblica: boolean;
-  recordarVersiculoDeMemoria: boolean;
-  trajoSombrero: boolean;
-  trajoOfrenda: boolean;
+  registroPuntajeRegla: RegistroPuntajeRegla[];
 }
 
 export interface PuntajeRegla {
   idPuntajeRegla: string;
   descripcion: string;
+}
+
+export interface RegistroPuntajeRegla extends PuntajeRegla {
+  cumplePuntajeRegla: boolean;
 }
