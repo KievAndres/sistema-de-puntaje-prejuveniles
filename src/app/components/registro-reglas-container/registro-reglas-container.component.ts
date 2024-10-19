@@ -18,17 +18,17 @@ export class RegistroReglasContainerComponent implements OnInit {
     this.tabsRegistroReglas = [
       {
         nombre: 'Asistencia y puntualidad',
-        esActivo: false
+        esActivo: true
       },
       {
         nombre: 'Registro reglas',
-        esActivo: true
+        esActivo: false
       }
     ];
   }
 
   public async ngOnInit(): Promise<void> {
-    this.listaReglas = await this._supabaseService.getListaReglas();
+    this.listaReglas = await this._supabaseService.getSubCategoria ();
     this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla(this.listaReglas);
   }
 

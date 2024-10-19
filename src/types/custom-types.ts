@@ -7,35 +7,41 @@ export interface Tab {
   nombre: string;
   esActivo: boolean;
 }
-export interface MiembroPuntajeTotal {
-  nombreCompleto: string;
-  esAyudante: boolean;
-  puntajeTotal: number;
+
+export interface CalificacionMaxima {
+  id: string;
+  valor: number;
 }
 
-export interface MiembroPuntajePorMes {
-  nombreCompleto: string;
-  esAyudante: boolean;
-  puntajeTotal: number;
-  mes: number;
-}
-
-export interface Miembro {
+export interface MiembroEquipo {
   idMiembroEquipo: string;
   nombreCompleto: string;
+  apodo: string;
+  fechaNacimiento?: string;
+  fechaModificacion: string;
   esAyudante: boolean;
 }
 
-
-export interface MiembroRegistroRegla extends Miembro {
-  registroPuntajeRegla: RegistroPuntajeRegla[];
+export interface Categoria {
+  idCategoria: string;
+  nombre: string;
+  porcentaje: number;
+  esBonus: boolean;
 }
 
-export interface PuntajeRegla {
-  idPuntajeRegla: string;
+export interface SubCategoria {
+  idSubCategoria: string;
+  idCategoria: string;
   descripcion: string;
+  porcentaje: number;
+  esBonus: boolean;
 }
 
-export interface RegistroPuntajeRegla extends PuntajeRegla {
-  cumplePuntajeRegla: boolean;
+export interface RegistroPuntaje {
+  idRegistroPuntaje: string;
+  idCategoria: string;
+  idSubCategoria: string;
+  idMiembroEquipo: string;
+  porcentajeObtenido: number;
+  fechaModificacion: string
 }
