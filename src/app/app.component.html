@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+ <table>
+  <thead>
+    <tr>
+      <th>Miembro</th>
+      <th *ngFor="let subCategoria of listaSubCategoria">
+        <span class="table-header">{{subCategoria.descripcion}}</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let miembro of listaMiembros">
+      <td>{{miembro.apodo}}</td>
+      <td *ngFor="let subCategoria of listaSubCategoria">
+        <button>test</button>
+      </td>
+    </tr>
+  </tbody>
+ </table>
