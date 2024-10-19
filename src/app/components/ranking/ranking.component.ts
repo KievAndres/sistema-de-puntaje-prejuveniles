@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { SupabaseService } from 'src/services/supabase.service';
-import { MiembroPuntajeTotal } from 'src/types/custom-types';
+// import { MiembroPuntajeTotal } from 'src/types/custom-types';
 import { enumNombreMeses, periodoRanking } from '../../../utils/enum';
 
 @Component({
@@ -10,12 +10,12 @@ import { enumNombreMeses, periodoRanking } from '../../../utils/enum';
 })
 export class RankingComponent {
   public titulo = 'Ranking';
-  public listaMiembros: MiembroPuntajeTotal[] | null;
+  // public listaMiembros: MiembroPuntajeTotal[] | null;
   public tituloPeridoActual: string;
   public periodoElegido: 'periodo' | 'anual';
 
   constructor(private _supabaseService: SupabaseService) {
-    this.listaMiembros = []
+    // this.listaMiembros = []
     this.tituloPeridoActual = '';
     this.periodoElegido = 'periodo';
   }
@@ -40,11 +40,11 @@ export class RankingComponent {
         ultimoDia = new Date(fechaActual.getFullYear(), 11, 31);
         break;
     }
-    this.listaMiembros =
-      await this._supabaseService.getListaMiembrosPuntajeTotalRango(
-        primerDia.toISOString(),
-        ultimoDia.toISOString()
-      );
+    // this.listaMiembros =
+    //   await this._supabaseService.getListaMiembrosPuntajeTotalRango(
+    //     primerDia.toISOString(),
+    //     ultimoDia.toISOString()
+    //   );
   }
 
   public cambiarPeriodoElegido(periodoElegido: 'periodo' | 'anual'): void {

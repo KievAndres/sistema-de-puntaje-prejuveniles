@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MiembroRegistroRegla, PuntajeRegla } from '../../../types/custom-types';
+import {} from '../../../types/custom-types';
 
 @Component({
   selector: 'registro-reglas',
@@ -7,11 +7,11 @@ import { MiembroRegistroRegla, PuntajeRegla } from '../../../types/custom-types'
   styleUrls: ['registro-reglas.component.scss'],
 })
 export class RegistroReglasComponent {
-  @Input() public listaMiembros: MiembroRegistroRegla[] = [];
-  @Input() public listaReglas: PuntajeRegla[] = [];
-  public titulo: string;
+  // @Input() public listaMiembros: MiembroRegistroRegla[] = [];
+  // @Input() public listaReglas: PuntajeRegla[] = [];
+  // public titulo: string;
 
   constructor() {
-    this.titulo = 'Registro reglas';
+    // this.titulo = 'Registro reglas';
   }
 }
