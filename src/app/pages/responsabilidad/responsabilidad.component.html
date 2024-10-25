@@ -1,0 +1,18 @@
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Miembro</th>
+      <th *ngFor="let responsabilidad of listaResponsabilidades">
+        <span class="table-header">{{responsabilidad.descripcion}}</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let miembro of listaMiembroResponsabilidad">
+      <td>{{miembro.apodo}}</td>
+      <td *ngFor="let responsabilidad of listaResponsabilidades">
+        <button class="btn btn-light">🤔</button>
+      </td>
+    </tr>
+  </tbody>
+ </table>

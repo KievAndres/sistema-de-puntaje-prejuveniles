@@ -14,7 +14,7 @@ export class SupabaseService {
     return data || [];
   }
 
-  async getSubCategoria(): Promise<SubCategoria[]> {
+  async getResponsabilidades(): Promise<SubCategoria[]> {
     const { data } = await supabase
       .from('SubCategoria')
       .select('*')
@@ -48,5 +48,6 @@ export class SupabaseService {
     `
       )
       .eq('RegistroPuntaje.idCategoria', 'responsabilidad');
+    return data || [];
   }
 }

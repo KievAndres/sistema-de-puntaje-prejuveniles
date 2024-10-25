@@ -18,8 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla();
-    this.listaSubCategoria = await this._supabaseService.getSubCategoria();
-    this.puntajeResponsabilidad = await this._supabaseService.getPuntajeResponsabilidadMiembros();
+    // this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla();
+    // this.listaSubCategoria = await this._supabaseService.getSubCategoria();
   }
 }

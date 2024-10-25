@@ -12,6 +12,7 @@ import { RegistroReglasComponent } from './components/registro-reglas/registro-r
 import { TabsComponent } from './components/tabs/tabs.component';
 import { SelectorMiembroReglaComponent } from './components/selector-miembro-regla/selector-miembro-regla.component';
 import { ListaMiembrosPopUpComponent } from './components/lista-miembros-pop-up/lista-miembros-pop-up.component';
+import { ResponsabilidadComponent } from './pages/responsabilidad/responsabilidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ListaMiembrosPopUpComponent } from './components/lista-miembros-pop-up/
     RegistroReglasComponent,
     TabsComponent,
     SelectorMiembroReglaComponent,
-    ListaMiembrosPopUpComponent
+    ListaMiembrosPopUpComponent,
+    ResponsabilidadComponent,
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],

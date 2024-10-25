@@ -28,7 +28,7 @@ export class RegistroReglasContainerComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.listaSubCategoria = await this._supabaseService.getSubCategoria();
+    this.listaSubCategoria = await this._supabaseService.getResponsabilidades();
     this.listaMiembros =
       await this._supabaseService.getListaMiembrosRegistroRegla();
   }

@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { RegistroReglasContainerComponent } from './components/registro-reglas-container/registro-reglas-container.component';
+import { ResponsabilidadComponent } from './pages/responsabilidad/responsabilidad.component';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'reglas'
+    redirectTo: 'responsabilidad'
+  },
+  {
+    path: 'responsabilidad',
+    component: ResponsabilidadComponent
   },
   {
     path: 'ranking',
