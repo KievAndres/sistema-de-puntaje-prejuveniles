@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'puntaje-prejuveniles';
   public listaMiembros: MiembroEquipo[];
   public listaSubCategoria: SubCategoria[];
+  public puntajeResponsabilidad: any;
   constructor(private readonly _supabaseService: SupabaseService) {
     this.listaMiembros = [];
     this.listaSubCategoria = [];
@@ -19,5 +20,6 @@ export class AppComponent implements OnInit {
   public async ngOnInit(): Promise<void> {
     this.listaMiembros = await this._supabaseService.getListaMiembrosRegistroRegla();
     this.listaSubCategoria = await this._supabaseService.getSubCategoria();
+    this.puntajeResponsabilidad = await this._supabaseService.getPuntajeResponsabilidadMiembros();
   }
 }

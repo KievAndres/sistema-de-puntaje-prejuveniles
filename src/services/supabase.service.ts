@@ -28,4 +28,25 @@ export class SupabaseService {
       .insert(listaInsercionDatos);
     console.log(error);
   }
+
+  async getPuntajeResponsabilidadMiembros(): Promise<any> {
+    const { data } = await supabase
+      .from('MiembroEquipo')
+      .select(
+        `
+      idMiembroEquipo,
+      nombreCompleto,
+      apodo,
+      esAyudante,
+      RegistroPuntaje (
+        idRegistroPuntaje,
+        porcentajeObtenido,
+        fechaModificacion,
+        Categoria (nombre, porcentaje, esBonus),
+        SubCategoria (descripcion, porcentaje, esBonus)
+      )
+    `
+      )
+      .eq('RegistroPuntaje.idCategoria', 'responsabilidad');
+  }
 }
