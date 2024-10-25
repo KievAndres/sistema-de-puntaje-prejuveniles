@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../services/supabase.service';
-import { MiembroEquipo, SubCategoria } from '../types/custom-types';
+import { SubCategoria } from '../interfaces/sub-categoria.interface';
+import { MiembroEquipo } from '../interfaces/miembro-equipo.interface';
 
 @Component({
   selector: 'app-root',

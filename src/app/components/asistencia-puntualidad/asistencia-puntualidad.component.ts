@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { MiembroEquipo } from 'src/types/custom-types';
 // import { MiembroRegistroRegla } from 'src/types/custom-types';
 // import { RegistroPuntajeRegla } from '../../../types/custom-types';
 import { AsistenciaPuntualidadEnum, puntajeReglaId } from 'src/utils/enum';
+import { MiembroEquipo } from '../../../interfaces/miembro-equipo.interface';
 
 @Component({
   selector: 'asistencia-puntualidad',

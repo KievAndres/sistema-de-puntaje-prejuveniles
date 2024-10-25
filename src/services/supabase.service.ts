@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { supabase } from 'src/utils/supabase';
-import { MiembroEquipo, SubCategoria } from '../types/custom-types';
+import { MiembroEquipo } from '../interfaces/miembro-equipo.interface';
+import { SubCategoria } from '../interfaces/sub-categoria.interface';
 
 @Injectable({ providedIn: 'root' })
 export class SupabaseService {
@@ -42,8 +43,7 @@ export class SupabaseService {
         idRegistroPuntaje,
         porcentajeObtenido,
         fechaModificacion,
-        Categoria (nombre, porcentaje, esBonus),
-        SubCategoria (descripcion, porcentaje, esBonus)
+        SubCategoria (idSubCategoria, idCategoria, descripcion, esBonus)
       )
     `
       )

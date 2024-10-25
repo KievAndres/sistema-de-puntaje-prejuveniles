@@ -13,29 +13,9 @@ export interface CalificacionMaxima {
   valor: number;
 }
 
-export interface MiembroEquipo {
-  idMiembroEquipo: string;
-  nombreCompleto: string;
-  apodo: string;
-  fechaNacimiento?: string;
-  fechaModificacion: string;
-  esAyudante: boolean;
-}
 
-export interface Categoria {
-  idCategoria: string;
-  nombre: string;
-  porcentaje: number;
-  esBonus: boolean;
-}
 
-export interface SubCategoria {
-  idSubCategoria: string;
-  idCategoria: string;
-  descripcion: string;
-  porcentaje: number;
-  esBonus: boolean;
-}
+
 
 export interface RegistroPuntaje {
   idRegistroPuntaje: string;

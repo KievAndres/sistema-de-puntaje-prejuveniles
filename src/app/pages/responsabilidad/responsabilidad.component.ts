@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../../../services/supabase.service';
-import { SubCategoria } from '../../../types/custom-types';
+import { SubCategoria } from '../../../interfaces/sub-categoria.interface';
 
 @Component({
   selector: 'responsabilidad',

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../../../services/supabase.service';
-import { Tab, SubCategoria, MiembroEquipo } from '../../../types/custom-types';
+import { Tab } from '../../../types/custom-types';
+import { SubCategoria } from '../../../interfaces/sub-categoria.interface';
+import { MiembroEquipo } from '../../../interfaces/miembro-equipo.interface';
 
 @Component({
   selector: 'registro-reglas-container',
