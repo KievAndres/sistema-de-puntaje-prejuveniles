@@ -1,0 +1,137 @@
+[
+  {
+    "idMiembroEquipo": "abi-murillo",
+    "nombreCompleto": "Abigail Johana Murillo Miranda",
+    "apodo": "Abi",
+    "esAyudante": false,
+    "RegistroPuntaje": [
+      {
+        "SubCategoria": {
+          "esBonus": false,
+          "descripcion": "¿Trajo biblia?",
+          "idCategoria": "responsabilidad",
+          "idSubCategoria": "trajo-biblia"
+        },
+        "fechaModificacion": "2024-10-25T20:54:00.05821",
+        "idRegistroPuntaje": "1d299cf1-8756-41d6-9074-7fc372233200",
+        "porcentajeObtenido": 100
+      },
+      {
+        "SubCategoria": {
+          "esBonus": false,
+          "descripcion": "Puntualidad",
+          "idCategoria": "responsabilidad",
+          "idSubCategoria": "puntualidad"
+        },
+        "fechaModificacion": "2024-10-25T21:09:31.79832",
+        "idRegistroPuntaje": "c4de6d4a-f700-4d09-915c-f99579239c65",
+        "porcentajeObtenido": 100
+      }
+    ]
+  },
+  {
+    "idMiembroEquipo": "aryan",
+    "nombreCompleto": "Aryan",
+    "apodo": "Aryan",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "briana",
+    "nombreCompleto": "Briana",
+    "apodo": "Bri",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "dana-belen",
+    "nombreCompleto": "Dana Belen",
+    "apodo": "Danita",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "daniel-bautista",
+    "nombreCompleto": "Daniel Bautista",
+    "apodo": "Dani B",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "dasha-alanoca",
+    "nombreCompleto": "Dasha Alanoca",
+    "apodo": "Dasha",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "david-callizaya",
+    "nombreCompleto": "David Callizaya",
+    "apodo": "David",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "emmanuel-murillo",
+    "nombreCompleto": "Emmanuel Andres Murillo Moscoso",
+    "apodo": "Manu",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "isaac-murillo",
+    "nombreCompleto": "Isaac Murillo",
+    "apodo": "Isaac",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "isaias-villca",
+    "nombreCompleto": "Isaias Villca",
+    "apodo": "Isaias",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "jose-ariel",
+    "nombreCompleto": "Jose Ariel",
+    "apodo": "Jose Ariel",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "juanqui",
+    "nombreCompleto": "Juan Manuel",
+    "apodo": "Juanqui",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "nicolas",
+    "nombreCompleto": "Nicolas",
+    "apodo": "Nico",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "tiago-llave",
+    "nombreCompleto": "Tiago Llave",
+    "apodo": "Tiago",
+    "esAyudante": false,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "sara-sanchez",
+    "nombreCompleto": "Sara Sanchez",
+    "apodo": "Sarita",
+    "esAyudante": true,
+    "RegistroPuntaje": []
+  },
+  {
+    "idMiembroEquipo": "arlin-pinto",
+    "nombreCompleto": "Arlin Pinto",
+    "apodo": "Pili",
+    "esAyudante": true,
+    "RegistroPuntaje": []
+  }
+]
