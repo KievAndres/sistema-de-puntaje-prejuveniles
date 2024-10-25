@@ -1,18 +1,23 @@
- <table class="table table-striped">
+<paginator
+  *ngIf="listaResponsabilidadesPaginadas.length > 0"
+  [paginatorSize]="listaResponsabilidadesPaginadas.length"
+  (changeSelectedPage)="changeSelectedPage($event)"
+></paginator>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Miembro</th>
-      <th *ngFor="let responsabilidad of listaResponsabilidades">
-        <span class="table-header">{{responsabilidad.descripcion}}</span>
+      <th *ngFor="let responsabilidad of listaResponsabilidadesPaginadas[selectedPage - 1]">
+        <span class="table-header">{{ responsabilidad.descripcion }}</span>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let miembro of listaMiembroResponsabilidad">
-      <td>{{miembro.apodo}}</td>
-      <td *ngFor="let responsabilidad of listaResponsabilidades">
-        <button class="btn btn-light">🤔</button>
+      <td>{{ miembro.apodo }}</td>
+      <td *ngFor="let responsabilidad of listaResponsabilidadesPaginadas">
+        <button class="btn btn-light"></button>
       </td>
     </tr>
   </tbody>
- </table>
+</table>

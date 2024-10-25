@@ -1,0 +1,18 @@
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [ngClass]="{'disabled': activePage === 1}" (click)="clickPreviusPage()">
+      <span class="page-link">Previous</span>
+    </li>
+    <li
+      *ngFor="let page of pages"
+      class="page-item"
+      [ngClass]="{ active: page === activePage }"
+      (click)="emitSelectedPage(page)"
+    >
+      <span class="page-link">{{ page }}</span>
+    </li>
+    <li class="page-item" [ngClass]="{'disabled': activePage === pages.length}" (click)="clickNextPage()">
+      <span class="page-link">Next</span>
+    </li>
+  </ul>
+</nav>

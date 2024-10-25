@@ -13,6 +13,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { SelectorMiembroReglaComponent } from './components/selector-miembro-regla/selector-miembro-regla.component';
 import { ListaMiembrosPopUpComponent } from './components/lista-miembros-pop-up/lista-miembros-pop-up.component';
 import { ResponsabilidadComponent } from './pages/responsabilidad/responsabilidad.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { ResponsabilidadComponent } from './pages/responsabilidad/responsabilida
     SelectorMiembroReglaComponent,
     ListaMiembrosPopUpComponent,
     ResponsabilidadComponent,
+    PaginatorComponent
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
